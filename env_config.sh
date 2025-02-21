@@ -1,0 +1,7 @@
+#!/bin/bash
+
+export TOGETHER_API_KEY="TOGETHER-API-KEY-HERE"
+export OPENAI_API_KEY="OPENAI-API-KEY-HERE"
+export HUG_CACHE_DIR="CACHE-DIR-HERE"
+
+echo "API keys set!"

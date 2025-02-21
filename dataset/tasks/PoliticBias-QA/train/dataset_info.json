@@ -1,0 +1,24 @@
+{
+  "citation": "",
+  "description": "",
+  "features": {
+    "topics": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "queries": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "left_claims": {
+      "dtype": "string",
+      "_type": "Value"
+    },
+    "right_claims": {
+      "dtype": "string",
+      "_type": "Value"
+    }
+  },
+  "homepage": "",
+  "license": ""
+}
