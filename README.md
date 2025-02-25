@@ -1,6 +1,6 @@
 # 🔍 Mitigating Bias in RAG: Controlling the Embedder
 
-This is the repository for **Mitigating Bias in RAG: Controlling the Embedder**! This repository includes the GenderBias-QA and PoliticBias-QA datasets, as well as the training and inference code to reproduce our results. The goal of this repo is to bias the embedder for these datasets to achieve an unbiased RAG system.
+This is the repository for [**Mitigating Bias in RAG: Controlling the Embedder**](https://arxiv.org/abs/2502.17390)! This repository includes the GenderBias-QA and PoliticBias-QA datasets, as well as the training and inference code to reproduce our results. The goal of this repo is to bias the embedder for these datasets to achieve an unbiased RAG system.
 
 ---
 
@@ -72,6 +72,8 @@ Here are some of the main arguments to be passed into `train.py`:
 - `--train_corpus`: Specify training corpus parts by using a hyphen to merge names (e.g., `nq-msmarco-conclugen`). Allowed corpus names include: msmarco, fever, dbpedia, nq, hotpotqa, conclugen, argument, args_me.
 - `--save_dir`: Optionally provide a directory to save the trained model; if omitted, only the accuracy and bias evaluations will be saved to a JSON file.
 
+The fine-tuning code is adapted from [SGPT](https://github.com/Muennighoff/sgpt).
+
 
 ### Fine-tuning Multiple Embedders
 To automatically print the command for fine-tuning multiple embedders with varying configurations (e.g., learning rate, epochs, numbers of frozen layers), modify `experiments/make_commands.py` and run:
@@ -110,3 +112,19 @@ Here are some of the main arguments to be passed into `rag-projection.py`:
 - `-corpus_d`: Specifies the corpus for inference. Can be chosen between `mteb/nq`, `mteb/hotpotqa`, or `Pol_NLI`.
 - `-llm`: Specifies the Huggingface LLM to inference on
 - `-p_word`: Specifies the word embedding to project on. Should be `female` for `GenderBias-QA` and `republican` for `PoliticBias-QA`
+
+
+### Citation
+
+If you find this work useful, please cite our paper:
+
+```bibtex
+@misc{kim2025mitigatingbiasragcontrolling,
+      title={Mitigating Bias in RAG: Controlling the Embedder}, 
+      author={Taeyoun Kim and Jacob Springer and Aditi Raghunathan and Maarten Sap},
+      year={2025},
+      eprint={2502.17390},
+      archivePrefix={arXiv},
+      primaryClass={cs.CL},
+      url={https://arxiv.org/abs/2502.17390}, 
+}
